@@ -72,7 +72,6 @@ class UserTableViewCell: UITableViewCell {
             extraInfoLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 5.0),
             extraInfoLabel.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor),
             extraInfoLabel.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor, constant: -20.0)
-            
             ])
     }
 }

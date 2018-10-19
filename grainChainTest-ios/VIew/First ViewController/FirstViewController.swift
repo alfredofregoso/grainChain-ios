@@ -125,11 +125,9 @@ class FirstViewController: UIViewController {
 extension FirstViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         if isSearching {
             return filteredUsers.count
         }
-        
         return users.count
     }
     
@@ -164,7 +162,6 @@ extension FirstViewController: UITableViewDelegate, UITableViewDataSource {
             alert.addAction(actionOk)
             alert.addAction(actionCancel)
             present(alert, animated: true, completion: nil)
-       
         }
     }
 }
