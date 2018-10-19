@@ -12,7 +12,8 @@ class LoginInViewController: UIViewController {
     lazy var imageLogo: UIImageView = {
         let i = UIImageView(frame: .zero)
         i.translatesAutoresizingMaskIntoConstraints = false
-        i.backgroundColor = UIColor.gray
+        i.image = UIImage(named: "grainChain")
+        i.contentMode = .scaleAspectFit
         return i
     }()
     
