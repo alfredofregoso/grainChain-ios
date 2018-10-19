@@ -95,10 +95,26 @@ class LoginInViewController: UIViewController {
     func loginToTheViewController() {
         if let user = userTextField.text, let password = passwordTextField.text {
             APIService().signIn(userName: user, password: password) {
-                let mainTabController = MainTabBarController()
-                self.present(mainTabController, animated: true, completion: nil)
+                if (user == "harvx_190878" && password == "supersecretpassword") {
+                    let mainTabController = MainTabBarController()
+                    self.present(mainTabController, animated: true, completion: nil)
+                }else {
+                    self.presentAlert()
+                }
+               
             }
+
         }
+    }
+    
+    func presentAlert() {
+        let alertController = UIAlertController(title: "Acceso denegado", message: "Tu usuario o contraseña son incorrectos", preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "Ok", style: .default) { (_) in
+            self.userTextField.text = ""
+            self.passwordTextField.text = ""
+        }
+        alertController.addAction(alertAction)
+        present(alertController, animated: true, completion: nil)
     }
     
     @objc func logInButtonClicked() {
