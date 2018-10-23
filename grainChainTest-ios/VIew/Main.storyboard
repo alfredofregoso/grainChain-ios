@@ -77,21 +77,6 @@
             </objects>
             <point key="canvasLocation" x="-1655.2" y="698.5007496251875"/>
         </scene>
-        <!--Test View Controller-->
-        <scene sceneID="blG-p7-nTa">
-            <objects>
-                <viewController storyboardIdentifier="TestViewController" id="tim-MU-9hB" customClass="TestViewController" customModule="grainChainTest_ios" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="kie-6M-Eba">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="fe5-zX-nOW"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GoO-vQ-5wh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1587" y="1413"/>
-        </scene>
         <!--Second View Controller-->
         <scene sceneID="rz3-FX-BOx">
             <objects>
