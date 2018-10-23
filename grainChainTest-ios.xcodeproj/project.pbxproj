@@ -10,7 +10,6 @@
 		A313AF7C217946CC00CD7B0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313AF7B217946CC00CD7B0F /* AppDelegate.swift */; };
 		A313AF83217946CF00CD7B0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A313AF82217946CF00CD7B0F /* Assets.xcassets */; };
 		A313AF86217946CF00CD7B0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A313AF84217946CF00CD7B0F /* LaunchScreen.storyboard */; };
-		A313AF8E2179481300CD7B0F /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313AF8D2179481300CD7B0F /* MainTabBarController.swift */; };
 		A313AF902179488400CD7B0F /* LoginInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313AF8F2179488400CD7B0F /* LoginInViewController.swift */; };
 		A313AF9421794B7F00CD7B0F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313AF9321794B7F00CD7B0F /* FirstViewController.swift */; };
 		A313AF9621794B8D00CD7B0F /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313AF9521794B8D00CD7B0F /* SecondViewController.swift */; };
@@ -18,6 +17,8 @@
 		A313AF9F2179856C00CD7B0F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313AF9E2179856C00CD7B0F /* User.swift */; };
 		A313AFA12179BC3600CD7B0F /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313AFA02179BC3600CD7B0F /* RealmService.swift */; };
 		A313AFA3217A43D400CD7B0F /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313AFA2217A43D400CD7B0F /* APIService.swift */; };
+		A313AFA8217E8D6A00CD7B0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A313AFA7217E8D6A00CD7B0F /* Main.storyboard */; };
+		A313AFAA217EB48C00CD7B0F /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313AFA9217EB48C00CD7B0F /* TestViewController.swift */; };
 		AA9F8F858ACF7392FABA71DC /* Pods_grainChainTest_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F208865ABC74260AD906F16 /* Pods_grainChainTest_ios.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,7 +30,6 @@
 		A313AF82217946CF00CD7B0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A313AF85217946CF00CD7B0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A313AF87217946CF00CD7B0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A313AF8D2179481300CD7B0F /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		A313AF8F2179488400CD7B0F /* LoginInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInViewController.swift; sourceTree = "<group>"; };
 		A313AF9321794B7F00CD7B0F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		A313AF9521794B8D00CD7B0F /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
@@ -37,6 +37,8 @@
 		A313AF9E2179856C00CD7B0F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A313AFA02179BC3600CD7B0F /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		A313AFA2217A43D400CD7B0F /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		A313AFA7217E8D6A00CD7B0F /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		A313AFA9217EB48C00CD7B0F /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		C49929816A413157F40E1D90 /* Pods-grainChainTest-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-grainChainTest-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-grainChainTest-ios/Pods-grainChainTest-ios.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,6 +90,7 @@
 				A313AF82217946CF00CD7B0F /* Assets.xcassets */,
 				A313AF84217946CF00CD7B0F /* LaunchScreen.storyboard */,
 				A313AF87217946CF00CD7B0F /* Info.plist */,
+				A313AFA9217EB48C00CD7B0F /* TestViewController.swift */,
 			);
 			path = "grainChainTest-ios";
 			sourceTree = "<group>";
@@ -103,8 +106,8 @@
 		A313AF9821795BCD00CD7B0F /* VIew */ = {
 			isa = PBXGroup;
 			children = (
-				A313AF8F2179488400CD7B0F /* LoginInViewController.swift */,
-				A313AF8D2179481300CD7B0F /* MainTabBarController.swift */,
+				A313AFA7217E8D6A00CD7B0F /* Main.storyboard */,
+				A313AFAD217EC4E300CD7B0F /* Log in */,
 				A313AF9A2179788E00CD7B0F /* First ViewController */,
 				A313AF9D21797A3000CD7B0F /* Second ViewController */,
 			);
@@ -135,6 +138,14 @@
 				A313AF9521794B8D00CD7B0F /* SecondViewController.swift */,
 			);
 			path = "Second ViewController";
+			sourceTree = "<group>";
+		};
+		A313AFAD217EC4E300CD7B0F /* Log in */ = {
+			isa = PBXGroup;
+			children = (
+				A313AF8F2179488400CD7B0F /* LoginInViewController.swift */,
+			);
+			path = "Log in";
 			sourceTree = "<group>";
 		};
 		AE218A54D920E3948103E88E /* Pods */ = {
@@ -206,6 +217,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A313AFA8217E8D6A00CD7B0F /* Main.storyboard in Resources */,
 				A313AF86217946CF00CD7B0F /* LaunchScreen.storyboard in Resources */,
 				A313AF83217946CF00CD7B0F /* Assets.xcassets in Resources */,
 			);
@@ -261,12 +273,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A313AFAA217EB48C00CD7B0F /* TestViewController.swift in Sources */,
 				A313AF9621794B8D00CD7B0F /* SecondViewController.swift in Sources */,
 				A313AF9421794B7F00CD7B0F /* FirstViewController.swift in Sources */,
 				A313AF902179488400CD7B0F /* LoginInViewController.swift in Sources */,
 				A313AF7C217946CC00CD7B0F /* AppDelegate.swift in Sources */,
 				A313AF9C217978B300CD7B0F /* UserTableViewCell.swift in Sources */,
-				A313AF8E2179481300CD7B0F /* MainTabBarController.swift in Sources */,
 				A313AF9F2179856C00CD7B0F /* User.swift in Sources */,
 				A313AFA3217A43D400CD7B0F /* APIService.swift in Sources */,
 				A313AFA12179BC3600CD7B0F /* RealmService.swift in Sources */,

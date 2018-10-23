@@ -14,17 +14,7 @@ class FirstViewController: UIViewController {
     var users: Results<Usuario>!
     var filteredUsers: Results<Usuario>!
     var isSearching = false
-  
-    lazy var tableView: UITableView = {
-        let t = UITableView(frame: .zero)
-        t.translatesAutoresizingMaskIntoConstraints = false
-        t.register(UserTableViewCell.self, forCellReuseIdentifier: cellId)
-        t.tableHeaderView = searchController.searchBar
-        t.delegate = self
-        t.dataSource = self
-        
-        return t
-    }()
+    @IBOutlet weak var tableView: UITableView!
     
     lazy var searchController: UISearchController = {
         let s = UISearchController(searchResultsController: nil)
@@ -42,27 +32,14 @@ class FirstViewController: UIViewController {
         UserDefaults.standard.set(true, forKey: "loggedInBefore")
         let realm = RealmService.shared.realm
         users = realm.objects(Usuario.self)
-        //creatingSearhBar()
+        creatingSearhBar()
         
         view.backgroundColor = UIColor.gray
-        setUpViews()
         addGestures()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
-    }
-    
-    func setUpViews() {
-        view.addSubview(tableView)
-        
-        NSLayoutConstraint.activate([
-            
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor)
-            ])
     }
     
     @objc func toggleEditing() {
@@ -85,13 +62,7 @@ class FirstViewController: UIViewController {
     }
     
     func creatingSearhBar() {
-        let searchController = UISearchController(searchResultsController: nil)
-        //searchController.searchResultsUpdater =
-        searchController.searchBar.delegate = self
-        searchController.searchBar.returnKeyType = .done
-        searchController.hidesNavigationBarDuringPresentation = false
-        searchController.dimsBackgroundDuringPresentation = false
-        tableView.tableHeaderView = searchController.searchBar
+        tableView?.tableHeaderView = searchController.searchBar
     }
     
     func createUsers() {
@@ -132,7 +103,7 @@ extension FirstViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! UserTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! UserTableViewCell
         cell.selectionStyle = .none
         
         if isSearching {
@@ -144,9 +115,9 @@ extension FirstViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-//        return true
-//    }
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -169,20 +140,21 @@ extension FirstViewController: UITableViewDelegate, UITableViewDataSource {
 extension FirstViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if let searchText = searchController.searchBar.text, !searchText.isEmpty {
-            isSearching = true
-            let predicate = NSPredicate(format: "name BEGINSWITH %@",searchText)
-            filteredUsers = RealmService.shared.realm.objects(Usuario.self).filter(predicate)
+        if let searchBarText = searchController.searchBar.text, !searchText.isEmpty  {
+                isSearching = true
+                let predicate = NSPredicate(format: "name BEGINSWITH %@",searchText)
+                filteredUsers = RealmService.shared.realm.objects(Usuario.self).filter(predicate)
+        
         } else {
             isSearching = false
             filteredUsers = users
         }
-        tableView.reloadData()
+        tableView?.reloadData()
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         isEditing = false
         filteredUsers = users
-        tableView.reloadData()
+        tableView?.reloadData()
     }
 }
